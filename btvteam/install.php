@@ -55,9 +55,10 @@ function create_btv_player_table()
 	
 	$sql = "CREATE TABLE $table_name (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		ligaid mediumint(9) NOT NULL,
 		gameid mediumint(9) NOT NULL,
-		player tinytext NOT NULL,
-		state mediumint(2) NOT NULL,
+		playerid mediumint(9) NOT NULL,
+		state tinytext NOT NULL,
 		PRIMARY KEY (id)
 	) $charset_collate;";
 
