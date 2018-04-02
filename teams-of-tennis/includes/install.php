@@ -63,11 +63,29 @@ if (!class_exists('VR_TennisInstall')) {
 	        dbDelta( $sql );
         }
 
+        private function create_score_table()
+        {
+	        global $wpdb;
+	
+	        $charset_collate = $wpdb->get_charset_collate();
+	        $table_name = $wpdb->prefix . VR_TENNIS_SCORE_SUFFIX;
+	
+	        $sql = "CREATE TABLE $table_name (
+		        id mediumint(9) NOT NULL AUTO_INCREMENT,
+		        home tinytext NOT NULL,
+		        guest tinytext NOT NULL,
+                points longtext NOT NULL,
+		        PRIMARY KEY (id)
+	        ) $charset_collate;";
+
+	        dbDelta( $sql );
+        }
         private function install() {
 	        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 	        create_team_table();
 	        create_game_table();
 	        create_player_table();
+            create_score_table();
         }
     }
     VR_TennisInstall::init();

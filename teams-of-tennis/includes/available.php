@@ -143,7 +143,7 @@ if (!class_exists('VR_TennisAvailable')) {
 		        }
         ?>
 			        <td>
-				        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" onsubmit="return confirm(\"test\");">
+				        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
 					        <input type="hidden" value="delete_player" name="action">
 					        <input type="hidden" value="<?php echo $id->playerid ?>" name="player_id">
 					        <input type="hidden" name="redirect" value="<?php echo home_url( $wp->request ); ?>">
