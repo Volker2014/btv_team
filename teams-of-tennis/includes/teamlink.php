@@ -18,9 +18,6 @@ if (!class_exists('VR_TennisLink')) {
 
 						), $atts));
 					
-	        $creategames = new VR_TennisGames();
-            $creategames->create($team);
-
 	        $teamPortraitLink = get_option('vr_tennisteam_link') . $team;
 	
 			global $vr_templatepath;

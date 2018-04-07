@@ -12,10 +12,10 @@
                 <th scope="row"><label for="vr_tennisclub_link">Club Link</label></th>
                 <td><input type="text" name="vr_tennisclub_link" size="150" value="<?php echo get_option('vr_tennisclub_link'); ?>" /></td>
             </tr>
-            <tr valign="top">
-                <th scope="row"><label for="vr_tennisballmodus_link">Ballmodus Link</label></th>
+<!-- coming soon            <tr valign="top">
+                <th scope="row"><label for="vr_tennisballmodus_link">Ballmode Link</label></th>
                 <td><input type="text" name="vr_tennisballmodus_link" size="150" value="<?php echo get_option('vr_tennisballmodus_link'); ?>" /></td>
-            </tr>
+            </tr>-->
         </table>
         <?php  submit_button(); ?>
     </form>

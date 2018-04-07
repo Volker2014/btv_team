@@ -69,6 +69,7 @@ if (!class_exists('VR_TennisAvailable')) {
 	        if (!is_user_logged_in()) {
 		        return '';
 	        }
+
 	        $team_table = $wpdb->prefix . VR_TENNIS_TEAM_SUFFIX;
 	        $game_table = $wpdb->prefix . VR_TENNIS_GAME_SUFFIX;
 	        $player_table = $wpdb->prefix . VR_TENNIS_PLAYER_SUFFIX;
@@ -83,6 +84,9 @@ if (!class_exists('VR_TennisAvailable')) {
  
                             ), $atts));
 		
+	        $creategames = new VR_TennisGames();
+            $creategames->create($team);
+
 	        $ligaid = VR_TennisAvailable::get_id($team_table, 'team="' . $team . '"');
 	        $games = $wpdb->get_results("SELECT * FROM $game_table WHERE ligaid=" . $ligaid);
 	        $player_ids = $wpdb->get_results("SELECT DISTINCT playerid FROM $player_table WHERE ligaid=" . $ligaid);
