@@ -60,4 +60,3 @@ For further details see installation section.
 trunk - initial version
 
 == Upgrade Notice ==
-
