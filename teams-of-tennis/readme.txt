@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-show all games of an tennis team or club from the BTV site inside an iframe, manage game availability of players
+show all games of a tennis team or club from the BTV site inside an iframe, manage game availability of players
 
 == Description ==
 * your are playing tennis inside Bavarian?
@@ -51,10 +51,10 @@ For further details see installation section.
 == Frequently Asked Questions ==
 
 == Screenshots ==
-1. back end settings
-2. front end game availability of players
-3. front end games of a team
-4. front end searching for club games
+1. Back end settings
+2. Front end game availability of players
+3. Front end games of a team
+4. Front end searching for club games
 
 == Changelog ==
 trunk - initial version
