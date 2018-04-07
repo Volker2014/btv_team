@@ -8,20 +8,23 @@ if (!class_exists('VR_TennisClubLink')) {
         }
 
         function link($atts) {
-               extract(shortcode_atts(array(
- 
-                            'width' => '100%',
- 
-                            'height' => '500',
- 
-                            'club' => ''
- 
-                            ), $atts));
+		   extract(shortcode_atts(array(
+
+						'width' => '100%',
+
+						'height' => '500',
+
+						'club' => ''
+
+						), $atts));
 					
 
 	        $clubPortraitLink = get_option('vr_tennisclub_link') . $club;
 	
-	        return '<iframe width="'.$width.'" height="'.$height.'" frameborder="0" marginheight="0" marginwidth="0" src="'.$clubPortraitLink.'"></iframe>'; 
+			global $vr_templatepath;
+			ob_start();
+			include($vr_templatepath . basename(__FILE__));
+			return ob_get_clean();
         }
     }
     VR_TennisClubLink::init();

@@ -8,23 +8,26 @@ if (!class_exists('VR_TennisLink')) {
         }
 
         public function link($atts) {
-               extract(shortcode_atts(array(
- 
-                            'width' => '100%',
- 
-                            'height' => '500',
- 
-                            'team' => ''
- 
-                            ), $atts));
+		   extract(shortcode_atts(array(
+
+						'width' => '100%',
+
+						'height' => '500',
+
+						'team' => ''
+
+						), $atts));
 					
 	        $creategames = new VR_TennisGames();
             $creategames->create($team);
 
 	        $teamPortraitLink = get_option('vr_tennisteam_link') . $team;
 	
-	        return '<iframe width="'.$width.'" height="'.$height.'" frameborder="0" marginheight="0" marginwidth="0" src="'.$teamPortraitLink.'"></iframe>'; 
-        }
+			global $vr_templatepath;
+			ob_start();
+			include($vr_templatepath . basename(__FILE__));
+			return ob_get_clean();
+		}
     }
 
     VR_TennisLink::init();

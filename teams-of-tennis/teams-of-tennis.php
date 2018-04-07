@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name:  Teams of Tennis
-Plugin URI: 
+Plugin URI:   https://github.com/Volker2014/wp_teams_of_tennis
 Description:  manage tennis teams and clubs from BTV page
-Version:      0.5
+Version:      0.6
 Author:       Volker Riecken
-Author URI:   https://github.com/Volker2014/wp_teams_of_tennis
+Author URI:   https://github.com/Volker2014
 License:      GPLv2 or later
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Min WP Version: 4.9.4
+Min WP Version: 4.9.0
 Max WP Version: 4.9.4
 
 Teams of Tennis is free software: you can redistribute it and/or modify
@@ -32,6 +32,7 @@ if (!function_exists('file_get_html')) {
 }
 
 $vr_stateimagepath = plugin_dir_url(__FILE__) . 'public/images/';
+$vr_templatepath = dirname(__FILE__) . '/templates/';
 
 define( 'VR_TENNIS_TEAM_SUFFIX', 'btv_team' );
 define( 'VR_TENNIS_GAME_SUFFIX', 'btv_game' );
