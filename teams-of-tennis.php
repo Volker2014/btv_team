@@ -27,12 +27,9 @@ along with Teams of Tennis. If not, see https://www.gnu.org/licenses/gpl-2.0.htm
 
 require_once(ABSPATH . 'wp-includes/pluggable.php');
 
-if (!function_exists('file_get_html')) {
-	//include_once(plugin_dir_path(__FILE__).'simple_html_dom.php');
-}
-
+$vr_pluginpath = dirname(__FILE__);
 $vr_stateimagepath = plugin_dir_url(__FILE__) . 'public/images/';
-$vr_templatepath = dirname(__FILE__) . '/templates/';
+$vr_templatepath = $vr_pluginpath . '/templates/';
 
 define( 'VR_TENNIS_TEAM_SUFFIX', 'btv_team' );
 define( 'VR_TENNIS_GAME_SUFFIX', 'btv_game' );

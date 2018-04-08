@@ -15,6 +15,11 @@ if (!class_exists('VR_TennisGames')) {
         public function create($team) {
 	        global $wpdb;
 	
+            if (!function_exists('file_get_html')) {
+                // building the path is a workaround, include moved from 'teams-of-tennis.php' to here
+	            include_once($vr_pluginpath . '/simple_html_dom.php');
+            }
+
 	        $team_table = $wpdb->prefix . VR_TENNIS_TEAM_SUFFIX;
 	        $game_table = $wpdb->prefix . VR_TENNIS_GAME_SUFFIX;
 
